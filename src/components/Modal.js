@@ -38,6 +38,7 @@ const ModalContent = styled.div`
   align-items: center;
   line-height: 1.8;
   color: #141414;
+  padding: 2rem;
 
   p {
     margin-bottom: 1rem;
