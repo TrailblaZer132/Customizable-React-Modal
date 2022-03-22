@@ -2,11 +2,13 @@ import React, { useRef } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
+import "./modal.scss";
 
 const Background = styled.div`
   width: 100%;
   height: 100%;
   backgroung: rgba(0, 0, 0, 0.8);
+  background-color: rgba(110, 110, 110, 0.5);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -29,7 +31,6 @@ const ModalImg = styled.img`
   height: 100%;
   border-radius: 10px 0 0 10px;
   background: #000;
-  object-fit: center;
 `;
 const ModalContent = styled.div`
   display: flex;
@@ -45,10 +46,19 @@ const ModalContent = styled.div`
   }
 
   button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(48, 48, 48);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+    display: inline-block;
+    min-height: 40px;
+    min-width: 90px;
+    transition: background-color 0.24s, box-shadow 0.24s;
   }
 `;
 
@@ -85,11 +95,15 @@ export const Modal = ({ showModal, setShowModal }) => {
   return (
     <>
       {showModal ? (
-        <Background ref={modalRef} onClick={closeModal}>
+        <Background ref={modalRef} onClick={closeModal} className="background">
           <animated.div style={animation}>
-            <ModalWrapper showModal={showModal}>
-              <ModalImg src={require("./modal.jpg")} alt="camera" />
-              <ModalContent>
+            <ModalWrapper showModal={showModal} className="wrapper">
+              <ModalImg
+                src={require("./modal.jpg")}
+                alt="camera"
+                className="modalimg"
+              />
+              <ModalContent className="modalcontent">
                 <h1>We write stories in Multiple languages</h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque

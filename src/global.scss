@@ -1,0 +1,21 @@
+$width: 760px;
+$tabWidth: 1300px;
+$portWidth: 1880px;
+
+@mixin mobile {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tabWidth}) {
+    @content;
+  }
+}
+
+@mixin port {
+  @media (max-width: #{$portWidth}) {
+    @content;
+  }
+}

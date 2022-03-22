@@ -1,0 +1,73 @@
+@import "./../global.scss";
+
+.background {
+  @include tablet {
+    background-color: rgba(110, 110, 110, 0.5);
+  }
+  @include mobile {
+    background-color: rgba(110, 110, 110, 0.5);
+  }
+  .wrapper {
+    @include tablet {
+      max-width: 600px;
+      max-height: 500px;
+    }
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      width: 250px;
+    }
+    .modalimg {
+      @include tablet {
+        max-width: 600px;
+        max-height: 500px;
+        padding: 40px 0 40px 0;
+      }
+      @include mobile {
+        border-radius: 10px 10px 0 0;
+        height: 300px;
+        padding: 0;
+        object-fit: fill;
+      }
+    }
+    .modalcontent {
+      @include tablet {
+        width: 300px;
+        h1 {
+          font-size: 25px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      @include mobile {
+        text-align: center;
+        width: 250px;
+        overflow: scroll;
+        padding: 60px 10px 10px 10px;
+        h1 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 11px;
+        }
+        button {
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+          color: white;
+          background-color: rgb(48, 48, 48);
+          border-radius: 4px;
+          font-size: 12px;
+          font-weight: 500;
+          padding: 4px 8px;
+          display: inline-block;
+          min-height: 28px;
+          min-width: 28px;
+          transition: background-color 0.24s, box-shadow 0.24s;
+        }
+      }
+    }
+  }
+}
