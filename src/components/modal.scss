@@ -14,13 +14,6 @@ $portWidth: 1880px;
   }
 }
 
-@mixin port {
-  @media (max-width: #{$portWidth}) {
-    @content;
-  }
-}
-
-
 .background {
   @include tablet {
     background-color: rgba(110, 110, 110, 0.5);
